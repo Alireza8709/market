@@ -1,0 +1,38 @@
+.navbar-brand{
+    z-index: 1;
+}
+
+.navbar-brand img {
+    width:63px;
+}
+
+#navbarNav{
+    direction: rtl;
+}
+
+.nav-item{
+    padding-top:8px;
+    margin: 0 10px !important;
+}
+
+
+.modal-header .close{ 
+    margin: -1rem auto -1rem -1rem !important;
+}
+
+.modal-title{
+    width: 100%;
+    text-align: center !important;
+}
+
+.form-group{
+    direction: ltr;
+    display: inline-block !important;
+    width: 100% !important;
+}
+
+
+.modal-footer{
+    height: 68px;
+}
+

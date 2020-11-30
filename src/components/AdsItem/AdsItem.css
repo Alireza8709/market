@@ -1,0 +1,37 @@
+.ads-item{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 15px;
+    position: relative;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.ads-item img{
+    border-radius: 5px;
+    width: 40%;
+}
+
+.ads-item div{
+    display: inline-block;
+    width: 60%;
+    float: left;
+}
+
+.ads-item svg{
+    position: absolute;
+    right: 43%;
+    bottom: 15px;
+}
+
+.ads-item .location {
+    position: absolute;
+    bottom:15px;
+    left: 15px;
+}
+
+.ads-item .price {
+    position: absolute;
+    bottom:30px;
+    left: 15px;
+}

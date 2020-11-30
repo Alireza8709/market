@@ -1,0 +1,13 @@
+.ads-border{
+    border-top: 1px solid lightgray;
+    margin: 20px 0 !important;
+    padding: 20px 0;
+    position: relative;
+}
+
+.ads-border span{
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    font-size: 13px !important;
+}

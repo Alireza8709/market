@@ -1,0 +1,25 @@
+.btn-tag{
+    margin: 0 5px;
+    border-radius: 25px !important;
+    border: 1px solid #dc3545 !important;
+    background-color: white !important;
+    color: #dc3545 !important;
+    font-size: 0.8rem !important;
+    font-weight: bold !important;
+}
+
+.btn-tag:hover{
+    border: 1px solid white !important;
+    background-color: #dc3545 !important;
+    color: white !important;
+    box-shadow:none;
+}
+
+.btn-tag.active{
+    border: 1px solid white !important;
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+.btn-tag:focus{
+    box-shadow: none !important;
+}

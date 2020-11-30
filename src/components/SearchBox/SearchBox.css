@@ -1,0 +1,28 @@
+.border-search{
+margin: 10px 0px;
+
+}
+
+.dropdown{
+    display: inline-block;
+    width: 20%;
+    float: left;
+}
+
+.dropdown .dropdown-toggle{
+    width: 100%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 1px solid lightgray;
+    border-right: none;
+}
+.dropdown-item:active{
+    background-color :#dc3545 !important;
+}
+
+input.form-control.searchbox-input{
+    width: 80%;
+    display: inline-block;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}

@@ -1,0 +1,13 @@
+.btn-class{
+    display: block !important;
+}
+
+
+.form-control#recipient-name{
+    display: block;
+    width: 100%;
+}
+
+.modal-footer{
+    justify-content: flex-start !important;
+}
