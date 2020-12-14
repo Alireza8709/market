@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { changeTags } from '../../store/ActionCreators';
 import "./Tags.css";
 
 
 class Tags extends Component {
-    state = { 
-        tagItems:this.props.tagsList,
-        selectedTag:""
-     }
-
-     handleTagClick=(tagId)=>{
-        this.setState({selectedTagId: tagId});
-        this.props.onClickTag(tagId);
-     }
+   
 
     render() { 
         return ( 
-        this.state.tagItems.map((tag,index)=> <button onClick={ ()=>this.handleTagClick(tag.id)} key={index} className={(this.state.selectedTagId===tag.id) ? "btn btn-tag active" : "btn btn-tag" }>{tag.name}</button> )
+        this.props.tagItems.map((tag,index)=> <button onClick={ ()=>this.props.handleTagClick(tag.id)} key={index} className={(this.props.selectedTag===tag.id) ? "btn btn-tag active" : "btn btn-tag" }>{tag.name}</button> )
          );
     }
 }
+
+const mapStateToProps=(state)=>({
+    tagItems: state.TagsReducer.tagItems,
+    selectedTag: state.TagsReducer.selectedTag
+});
+
+const mapDispatchToProps={
+    handleTagClick: changeTags
+}
  
-export default Tags;
+export default connect(mapStateToProps,mapDispatchToProps) (Tags);

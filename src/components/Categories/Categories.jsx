@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import "./Categories.css";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import * as Icons from '@fortawesome/free-solid-svg-icons';
+import { chooseCategory, reset } from '../../store/ActionCreators';
+import { connect } from 'react-redux';
+
+
 
 const iconList = Object
   .keys(Icons)
@@ -13,32 +17,33 @@ library.add(...iconList)
 
 
 class Categories extends Component {
-    state = { 
-        selectedCategory:0
-
-     };
-
-
-    handleCategoryClick=(categoryId)=>{
-        this.setState({selectedCategory:categoryId});
-
-        this.props.onChangeCategory(categoryId);
-    }
+   
 
 
     render() { 
         return ( 
             <div className="category-border">
-            <strong onClick={()=>this.handleCategoryClick(0)} className="category-title">Kategorier</strong>
+            <strong onClick={()=>{this.props.handleCategoryClick(0); this.props.handleReset()} } className="category-title">Kategorier</strong>
             <ul className="list-group list-group-flush">
-                { this.props.data.map((d,index)=>  <li onClick={()=>this.handleCategoryClick(d.id)} key={index} className={ (this.state.selectedCategory===d.id) ? "list-group-item active" : "list-group-item" }><FontAwesomeIcon icon={d.icon}></FontAwesomeIcon>{d.name}</li> )  }
+                { this.props.categoriesList.map((d,index)=>  <li onClick={()=> this.props.handleCategoryClick(d.id) } key={index} className={ (this.props.selectedCategory===d.id) ? "list-group-item active" : "list-group-item" }><FontAwesomeIcon icon={d.icon}></FontAwesomeIcon>{d.name}</li> )  }
             </ul>
           </div>
          );
     }
 }
+
+const mapStateToProps=(state)=>({
+    selectedCategory: state.CategoriesReducer.selectedCategory,
+    categoriesList: state.CategoriesReducer.categoriesList
+});
  
-export default Categories;
+
+const mapDispatchToProps={
+    handleCategoryClick :  chooseCategory,
+    handleReset: reset
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Categories);
 
 
 

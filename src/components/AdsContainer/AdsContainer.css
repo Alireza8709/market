@@ -11,3 +11,18 @@
     left: 0px;
     font-size: 13px !important;
 }
+
+
+.pagination .page-item:hover{
+    cursor: pointer;
+}
+
+.pagination .page-item.active .page-link{
+    color: white !important;
+    background-color: #dc3545 !important;
+    border-color: #dc3545;
+}
+
+.pagination .page-item .page-link{
+    color: #dc3545 !important;
+}

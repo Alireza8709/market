@@ -1,0 +1,27 @@
+
+//Category 
+export const TYPE_CHOOSE_CATEGORY="CHOOSE_CATEGORY";
+
+//Price
+export const TYPE_CHANGE_PRICE="CHANGE_PRICE";
+
+// Switch Input
+export const TYPE_CHANGE_PICTURE_STATE="CHANGE_PICTURE_STATE";
+export const TYPE_CHANGE_CHAT_STATE="CHANGE_CHAT_STATE";
+
+// Search Box
+export const TYPE_SERACH_BOX_TEXT_CHANGE="SEARCH_BOX_TEXT_CHANGE";
+
+// Tags
+export const TYPE_CHANGE_TAGS="CHANGE_TAGS";
+
+// reset
+export const TYPE_RESET="RESET";
+
+// location
+export const TYPE_CHANGE_CITY="CHANGE_CITY";
+
+// pagination
+export const TYPE_RESET_PAGINATION="RESET_PAGINATION";
+export const TYPE_CHANGE_PAGINATION="CHANGE_PAGINATION";
+

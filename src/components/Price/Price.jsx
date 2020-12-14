@@ -1,30 +1,18 @@
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { changePrice } from '../../store/ActionCreators';
 import "./Price.css";
+
 
 
 class Price extends Component {
     state = { 
-        price:{
-        minPrice:100,
-        maxPrice:5000
-        },
         isOpen:false
-
      }
     
-    handleChangePrice=(event)=>{
-
-        let test=this.state.price;
-
-        test[event.target.name]=parseInt(event.target.value);
-
-        this.setState({price:test});
-
-        this.props.onChangePrice(test);
-
-    }
+  
 
     handleOpenClick=()=>{
         let test=this.state.isOpen;
@@ -39,7 +27,7 @@ class Price extends Component {
                { this.state.isOpen && <div>
                 <div className="price-input">
                     <span>Min Pris: </span>
-                    <select name="minPrice" onChange={this.handleChangePrice} placeholder="tex 100 SEK">
+                    <select name="minPrice" onChange={this.props.handleChangePrice} placeholder="tex 100 SEK">
                         <option selected value="100">100</option>
                         <option value="500">500</option>
                         <option value="1000">1000</option>
@@ -50,7 +38,7 @@ class Price extends Component {
                 </div>
                 <div className="price-input">
                     <span>Max Pris: </span>
-                    <select name="maxPrice" onChange={this.handleChangePrice} placeholder="tex 5000 SEK">
+                    <select name="maxPrice" onChange={this.props.handleChangePrice} placeholder="tex 5000 SEK">
                         <option selected value="5000">5000</option>
                         <option value="7000">7000</option>
                         <option value="10000">10000</option>
@@ -65,5 +53,13 @@ class Price extends Component {
          );
     }
 }
+
+const mapStateToProps=(state)=>({
+    price: state.PriceReducer.price
+});
+
+const mapDispatchToPrice={
+    handleChangePrice:changePrice
+}
  
-export default Price;
+export default connect(mapStateToProps,mapDispatchToPrice)(Price);

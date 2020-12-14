@@ -4,15 +4,27 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { Provider } from 'react-redux';
+import { combineReducers, createStore } from 'redux';
+import { CategoriesReducer } from './store/reducers/CategoriesReducer';
+import { PriceReducer } from './store/reducers/PriceReducer';
+import { SwitchInputReducer } from './store/reducers/SwitchInputReducer';
+import { SearchBoxReducer } from './store/reducers/SearchBoxReducer';
+import { TagsReducer } from './store/reducers/TagsReducer';
+import { AdsReducer } from './store/reducers/AdsReducer';
+import { LocationReducer } from './store/reducers/LocationReducer';
 
+
+const store = createStore (combineReducers ({CategoriesReducer, PriceReducer, SwitchInputReducer, SearchBoxReducer, TagsReducer, AdsReducer, LocationReducer}) , window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() );
 
 
 
 ReactDOM.render(
   
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

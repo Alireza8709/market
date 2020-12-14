@@ -3,7 +3,7 @@ import "./SwitchInput.css";
 
 class SwitchInput extends Component {
     state = { 
-        active:false
+        active:this.props.isActive
      }
 
     handleChangeSwitch=()=>{
@@ -17,7 +17,7 @@ class SwitchInput extends Component {
             <div className="switch-border">
             <span>{this.props.text}</span>
                 <label  className="switch">
-                    <input onClick={this.handleChangeSwitch} type="checkbox"></input>
+                    <input onClick={this.handleChangeSwitch} checked={(this.props.isActive) ? "checked" : "" } type="checkbox"></input>
                     <span className="slider round"></span>
                 </label>
             </div>

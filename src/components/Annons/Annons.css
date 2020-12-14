@@ -11,3 +11,7 @@
 .modal-footer{
     justify-content: flex-start !important;
 }
+
+.error{
+    color:red;
+}
