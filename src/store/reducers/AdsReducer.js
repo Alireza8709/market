@@ -1,8 +1,5 @@
-const { getAds } = require("../../services/adsData");
 import { TYPE_CHANGE_PAGINATION, TYPE_RESET_PAGINATION } from '../ActionTypes';
-
-
-
+import { getAds } from '../../services/adsData.js';
 
 const initialState={
     adsItems:getAds(),
